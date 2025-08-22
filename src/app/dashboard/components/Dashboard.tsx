@@ -226,20 +226,20 @@ const Dashboard: React.FC = () => {
 
         {/* Sidebar */}
         <motion.aside
-          initial={{ x: -20, opacity: 0 }}
-          animate={{ 
-            x: 0, 
-            opacity: 1,
-            transform: sidebarOpen || window.innerWidth >= 1024 ? 'translateX(0)' : 'translateX(-100%)'
-          }}
-          transition={{ delay: 0.1 }}
-          className={`
-            fixed lg:relative lg:translate-x-0 z-50
-            w-64 bg-white shadow-sm border-r border-gray-200 min-h-screen
-            transition-transform duration-300 ease-in-out
-            ${sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
-          `}
-        >
+  initial={{ x: -20, opacity: 0 }}
+  animate={{ 
+    x: 0, 
+    opacity: 1,
+    transform: sidebarOpen ? 'translateX(0)' : 'translateX(-100%)'
+  }}
+  transition={{ delay: 0.1 }}
+  className={`
+    fixed lg:relative lg:translate-x-0 z-50
+    w-64 bg-white shadow-sm border-r border-gray-200 min-h-screen
+    transition-transform duration-300 ease-in-out
+    ${sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
+  `}
+>
           <nav className="p-4 lg:p-6">
             <div className="space-y-2">
               {sidebarItems.map((item) => {
